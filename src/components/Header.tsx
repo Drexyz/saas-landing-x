@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll"
 import { useState } from "react";
 
 import NavLink from "@components/NavLink";
@@ -25,21 +25,21 @@ export default function Header() {
             <nav className="max-lg: relative max-lg:z-2 max-lg:my-auto">
               <ul className="flex max-lg:block max-lg:px-12">
                 <li className="nav-li">
-                  <NavLink title="features" to="/features" />
+                  <NavLink title="features" to="features" />
                   <div className="dot"></div>
-                  <NavLink title="pricing" to="/pricing" />
+                  <NavLink title="pricing" to="pricing" />
                 </li>
 
                 <li className="nav-logo">
-                  <Link href="#hero" className="max-lg:hidden transition-transform duration-500 cursor-pointer">
+                  <ScrollLink to="hero" className="max-lg:hidden transition-transform duration-500 cursor-pointer">
                     <Image src="/images/xora.svg" alt="logo" width={160} height={55} />
-                  </Link>
+                  </ScrollLink>
                 </li>
 
                 <li className="nav-li">
-                  <NavLink title="faq" to="/faq" />
+                  <NavLink title="faq" to="faq" />
                   <div className="dot"></div>
-                  <NavLink title="download" to="/download" />
+                  <NavLink title="download" to="download" />
                 </li>
               </ul>
             </nav>
