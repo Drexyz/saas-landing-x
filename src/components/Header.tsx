@@ -2,19 +2,34 @@
 
 import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import NavLink from "@components/NavLink";
 
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  const scrollStateClass = hasScrolled ? "py-2 bg-black-100 backdrop-blur-[8px]" : "";
 
   const handleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 32);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full py-10">
+    <header className={`fixed top-0 left-0 right-0 z-50 w-full py-10 transition-all duration-500 max-lg:py-4 ${scrollStateClass}`}>
       <div className="container flex h-14 items-center max-lg:px-5">
         <a className="lg:hidden flex-1 cursor-pointer z-2">
           <Image src="/images/xora.svg" alt="logo" width={115} height={55} />
@@ -25,21 +40,27 @@ export default function Header() {
             <nav className="max-lg: relative max-lg:z-2 max-lg:my-auto">
               <ul className="flex max-lg:block max-lg:px-12">
                 <li className="nav-li">
-                  <NavLink title="features" to="features" />
+                  <NavLink title="features" to="features" onClick={handleMobileNav} />
                   <div className="dot"></div>
-                  <NavLink title="pricing" to="pricing" />
+                  <NavLink title="pricing" to="pricing" onClick={handleMobileNav} />
                 </li>
 
                 <li className="nav-logo">
-                  <ScrollLink to="hero" className="max-lg:hidden transition-transform duration-500 cursor-pointer">
+                  <ScrollLink
+                    to="hero"
+                    offset={-250}
+                    spy
+                    smooth
+                    className="max-lg:hidden transition-transform duration-500 cursor-pointer"
+                  >
                     <Image src="/images/xora.svg" alt="logo" width={160} height={55} />
                   </ScrollLink>
                 </li>
 
                 <li className="nav-li">
-                  <NavLink title="faq" to="faq" />
+                  <NavLink title="faq" to="faq" onClick={handleMobileNav} />
                   <div className="dot"></div>
-                  <NavLink title="download" to="download" />
+                  <NavLink title="download" to="download" onClick={handleMobileNav} />
                 </li>
               </ul>
             </nav>
