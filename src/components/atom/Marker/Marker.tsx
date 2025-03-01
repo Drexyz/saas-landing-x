@@ -2,7 +2,7 @@ interface MarkerProps {
   fill?: string
 }
 
-const Marker = ({ fill }: MarkerProps) => {
+export const Marker = ({ fill }: MarkerProps) => {
   return (
     <svg
       width="8"
