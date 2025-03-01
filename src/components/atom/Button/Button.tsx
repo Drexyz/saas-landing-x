@@ -1,8 +1,8 @@
-import { ReactNode } from "react"
 import Image from "next/image";
+import { ReactNode } from "react"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-import Marker from "@components/Marker";
+import { Marker } from "@components/atom";
 
 interface InnerButtonProps {
   icon?: string | StaticImport

@@ -1,6 +1,5 @@
-import Features from "@components/Features";
-import Header from "@components/Header"
-import Hero from "@components/Hero"
+import { Header } from "@components/molecule"
+import { Features, Hero, Pricing } from "@components/organism";
 
 export default function Home() {
   return (
@@ -8,6 +7,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Features />
+      <Pricing />
     </main>
   );
 }

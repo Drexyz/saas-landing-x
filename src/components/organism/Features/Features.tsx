@@ -1,9 +1,9 @@
 "use client"
+import Image from "next/image"
 import { Element } from "react-scroll"
 
-import { FEATURES, DETAILS } from "@constants/FEATURES"
-import Button from "@components/Button"
-import Image from "next/image"
+import { FEATURES, DETAILS } from "@constants"
+import { Button } from "@components/atom"
 
 export const Features = () => {
   return (

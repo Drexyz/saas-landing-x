@@ -1,12 +1,11 @@
 'use client'
-
 import Image from "next/image";
-import { Link as ScrollLink } from "react-scroll"
 import { useEffect, useState } from "react";
+import { Link as ScrollLink } from "react-scroll"
 
-import NavLink from "@components/NavLink";
+import { NavLink } from "@components/atom";
 
-export default function Header() {
+export const Header = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -93,3 +92,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default Header

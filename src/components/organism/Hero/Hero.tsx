@@ -1,8 +1,8 @@
 "use client"
+import Image from "next/image"
 import { Element, Link as LinkScroll } from "react-scroll"
 
-import Button from "@components/Button"
-import Image from "next/image"
+import { Button } from "@components/atom"
 
 export const Hero = () => {
   return (
