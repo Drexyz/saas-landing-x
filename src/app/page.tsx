@@ -1,5 +1,5 @@
 import { Header } from "@components/molecule"
-import { Features, Hero, Pricing } from "@components/organism";
+import { Features, Hero, Pricing, Faq, Testimonials, Download, Footer } from "@components/organism";
 
 export default function Home() {
   return (
@@ -8,6 +8,10 @@ export default function Home() {
       <Hero />
       <Features />
       <Pricing />
+      <Faq />
+      <Testimonials />
+      <Download />
+      <Footer />
     </main>
   );
 }
