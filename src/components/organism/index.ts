@@ -1,3 +1,7 @@
 export * from "./Features/Features"
 export * from "./Hero/Hero"
 export * from "./Pricing/Pricing"
+export * from "./Faq/Faq"
+export * from "./Testimonials/Testimonials"
+export * from "./Download/Download"
+export * from "./Footer/Footer"

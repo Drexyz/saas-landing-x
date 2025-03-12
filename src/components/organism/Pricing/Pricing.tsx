@@ -80,7 +80,7 @@ export const Pricing = () => {
                     <Image
                       src={plan.logo}
                       alt={plan.title}
-                      layout="fill"
+                      fill
                       className="object-contain drop-shadow-2xl"
                     />
                   </div>
@@ -142,7 +142,7 @@ export const Pricing = () => {
                         <Image
                           src={"/images/check.png"}
                           alt="check"
-                          layout="fill"
+                          fill
                           className="object-contain"
                         />
                       </div>

@@ -51,7 +51,7 @@ export const Features = () => {
                       <Image
                         src={detail.icon}
                         alt={detail.title}
-                        layout={"fill"}
+                        fill
                         className="object-contain z-20"
                       />
                     </div>
